@@ -69,7 +69,6 @@ CREATE TABLE IF NOT EXISTS vip_order (
     plan_name VARCHAR(100) DEFAULT NULL,
     pay_price DECIMAL(10,2) NOT NULL DEFAULT 0.00,
     days INT NOT NULL,
-    expire_time TIMESTAMP DEFAULT NULL,
     pay_time TIMESTAMP DEFAULT NULL,
     remark VARCHAR(255) DEFAULT NULL,
     create_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -88,7 +87,6 @@ COMMENT ON COLUMN vip_order.plan_id IS '套餐ID';
 COMMENT ON COLUMN vip_order.plan_name IS '套餐名称';
 COMMENT ON COLUMN vip_order.pay_price IS '支付金额';
 COMMENT ON COLUMN vip_order.days IS '有效天数,-1表示永久';
-COMMENT ON COLUMN vip_order.expire_time IS '到期时间';
 COMMENT ON COLUMN vip_order.pay_time IS '支付时间';
 
 CREATE INDEX idx_order_user_id ON vip_order(user_id);

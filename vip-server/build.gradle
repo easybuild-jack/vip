@@ -1,4 +1,5 @@
 dependencies {
     api project(':vip-api')
-    implementation('com.mcst:orm-mybatis')
+    api('com.mcst:orm-mybatis')
+    api('com.mcst:user-api')
 }

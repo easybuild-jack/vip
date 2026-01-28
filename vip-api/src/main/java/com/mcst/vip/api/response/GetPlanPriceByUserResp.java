@@ -1,14 +1,14 @@
 package com.mcst.vip.api.response;
 
-import java.io.Serializable;
-import java.math.BigDecimal;
-
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
 
-@Data   
+import java.io.Serializable;
+import java.math.BigDecimal;
+
+@Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -28,5 +28,11 @@ public class GetPlanPriceByUserResp implements Serializable {
      * VIP名称
      */
     private String vipName;
+
+
+    /**
+     * 天数，-1表示永久
+     */
+    private Integer days;
 
 }

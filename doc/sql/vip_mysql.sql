@@ -48,7 +48,6 @@ CREATE TABLE IF NOT EXISTS `vip_order` (
     `plan_name` VARCHAR(100) DEFAULT NULL COMMENT '套餐名称',
     `pay_price` DECIMAL(10,2) NOT NULL DEFAULT '0.00' COMMENT '支付金额',
     `days` INT NOT NULL COMMENT '有效天数,-1表示永久',
-    `expire_time` DATETIME DEFAULT NULL COMMENT '到期时间',
     `pay_time` DATETIME DEFAULT NULL COMMENT '支付时间',
     `remark` VARCHAR(255) DEFAULT NULL COMMENT '备注',
     `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',

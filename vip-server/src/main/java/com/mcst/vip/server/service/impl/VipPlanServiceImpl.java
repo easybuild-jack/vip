@@ -106,7 +106,7 @@ public class VipPlanServiceImpl implements IVipPlanService {
         if (price == null) {
             throw new BusinessException("套餐价格错误");
         }
-
-        return GetPlanPriceByUserResp.builder().vipCode(vipPlanDto.getVipCode()).vipName(vipPlanDto.getVipName()).price(price).build();
+        return GetPlanPriceByUserResp.builder().vipCode(vipPlanDto.getVipCode())
+                .vipName(vipPlanDto.getVipName()).price(price).days(vipPlanDto.getDays()).build();
     }
 }
