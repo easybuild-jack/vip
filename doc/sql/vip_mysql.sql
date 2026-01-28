@@ -1,5 +1,8 @@
 -- VIP模块 MySQL 初始化脚本
 -- 创建时间: 2026-01-28
+-- 设置字符集，确保中文注释正常显示
+SET NAMES utf8mb4;
+SET CHARACTER SET utf8mb4;
 
 -- VIP信息表
 CREATE TABLE IF NOT EXISTS `vip_info` (
