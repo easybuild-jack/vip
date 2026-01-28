@@ -1,0 +1,4 @@
+dependencies {
+    api project(':vip-api')
+    api ('com.mcst:rpc-dubbo')
+}

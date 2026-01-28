@@ -1,0 +1,26 @@
+package com.mcst.vip.api.param;
+
+import com.mcst.core.entity.BasePageParam;
+import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+/**
+ * VIP会员查询参数
+ *
+ * @author easyfk
+ */
+@Data
+@EqualsAndHashCode(callSuper = true)
+@Schema(description = "VIP会员查询参数")
+public class VipInfoParam extends BasePageParam {
+
+    @Schema(description = "VIP编号")
+    private String vipCode;
+
+    @Schema(description = "禁用状态 0可用，1禁用")
+    private Integer forbiddenFlag;
+
+    @Schema(description = "关键词")
+    private String keyword;
+}

@@ -1,0 +1,30 @@
+rootProject.name = 'vip'
+
+dependencyResolutionManagement.versionCatalogs {
+    libs {
+        library("dependencies", "com.mcst:easyfk-dependencies:3.2.12")
+        library('lombok', 'org.projectlombok:lombok:1.18.38')
+        library('lombokMapstruct', 'org.projectlombok:lombok-mapstruct-binding:0.2.0')
+        library('mapstructProcessor', 'io.github.linpeilie:mapstruct-plus-processor:1.5.0')
+        library('processor', 'org.springframework.boot:spring-boot-configuration-processor:3.2.12')
+    }
+}
+
+include 'vip-server'
+include 'vip-api'
+
+include 'vip-prd'
+include 'vip-prd:vip-prd-client'
+findProject(':vip-prd:vip-prd-client')?.name = 'vip-prd-client'
+include 'vip-prd:vip-prd-bms'
+findProject(':vip-prd:vip-prd-bms')?.name = 'vip-prd-bms'
+
+include 'vip-remote'
+include 'vip-remote:vip-cloud-api'
+findProject(':vip-remote:vip-cloud-api')?.name = 'vip-cloud-api'
+include 'vip-remote:vip-cloud-provider'
+findProject(':vip-remote:vip-cloud-provider')?.name = 'vip-cloud-provider'
+include 'vip-remote:vip-dubbo-api'
+findProject(':vip-remote:vip-dubbo-api')?.name = 'vip-dubbo-api'
+include 'vip-remote:vip-dubbo-provider'
+findProject(':vip-remote:vip-dubbo-provider')?.name = 'vip-dubbo-provider'
