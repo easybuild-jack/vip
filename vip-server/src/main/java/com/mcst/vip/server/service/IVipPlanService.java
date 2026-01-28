@@ -5,6 +5,8 @@ import java.math.BigDecimal;
 import com.mcst.service.core.base.IBaseService;
 import com.mcst.vip.api.dto.VipPlanResp;
 import com.mcst.vip.api.param.VipPlanReq;
+import com.mcst.vip.api.request.GetPlanPriceByUser;
+import com.mcst.vip.api.response.GetPlanPriceByUserResp;
 
 /**
  * VIP会员套餐 业务接口
@@ -14,11 +16,11 @@ import com.mcst.vip.api.param.VipPlanReq;
 public interface IVipPlanService extends IBaseService<VipPlanResp, String, VipPlanReq> {
 
     
-    /**
+     /**
      * 根据套餐ID获取套餐价格
      * 
-     * @param planId
-     * @return
+     * @param param
+     * @return GetPlanPriceByUserResp
      */
-    BigDecimal getVipPlanPrice(String planId);
+    GetPlanPriceByUserResp getVipPlanPrice(GetPlanPriceByUser param);
 }

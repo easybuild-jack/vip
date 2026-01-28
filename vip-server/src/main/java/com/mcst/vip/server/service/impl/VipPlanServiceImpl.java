@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -71,12 +72,12 @@ public class VipPlanServiceImpl implements IVipPlanService {
 
     @Override
     public BaseResult<?> save(ModifyRequest<VipPlanReq> param) {
-        return ServiceUtil.save(param, vipPlanRepository, VipPlan.class);
+        return ServiceUtil.save(param, vipPlanRepository, VipPlanDto.class);
     }
 
     @Override
     public BaseResult<?> delete(ModifyRequest<VipPlanReq> param) {
-        return ServiceUtil.delete(param, vipPlanRepository, VipPlan.class);
+        return ServiceUtil.delete(param, vipPlanRepository, VipPlanDto.class);
     }
 
     @Override
@@ -85,7 +86,8 @@ public class VipPlanServiceImpl implements IVipPlanService {
     }
 
     @Override
-    public BigDecimal getVipPlanPrice(String planId) {
+    public GetPlanPriceByUserResp getVipPlanPrice(GetPlanPriceByUser param) {
+
         return null;
     }
 }
