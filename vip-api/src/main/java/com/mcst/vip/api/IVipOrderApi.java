@@ -1,8 +1,8 @@
 package com.mcst.vip.api;
 
 import com.mcst.service.core.base.IBaseService;
-import com.mcst.vip.api.dto.VipOrderResp;
-import com.mcst.vip.api.param.VipOrderReq;
+import com.mcst.vip.api.request.VipOrderReq;
+import com.mcst.vip.api.response.VipOrderResp;
 
 /**
  * VIP订单API接口

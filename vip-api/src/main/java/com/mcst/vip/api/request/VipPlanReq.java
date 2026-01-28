@@ -1,4 +1,4 @@
-package com.mcst.vip.api.param;
+package com.mcst.vip.api.request;
 
 import com.mcst.core.entity.BaseReq;
 import io.swagger.v3.oas.annotations.media.Schema;

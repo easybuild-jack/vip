@@ -1,4 +1,6 @@
-package com.mcst.vip.api.dto;
+package com.mcst.vip.api.response;
+
+import com.mcst.vip.api.dto.VipOrderDto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
@@ -7,15 +9,15 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 /**
- * VIP会员套餐响应对象
+ * VIP购买订单响应对象
  *
  * @author easyfk
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Schema(description = "VIP会员套餐响应对象")
+@Schema(description = "VIP购买订单响应对象")
 @SuperBuilder
 @NoArgsConstructor
-public class VipPlanResp extends VipPlanDto {
+public class VipOrderResp extends VipOrderDto {
 
 }

@@ -1,4 +1,6 @@
-package com.mcst.vip.api.dto;
+package com.mcst.vip.api.response;
+
+import com.mcst.vip.api.dto.VipInfoDto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;

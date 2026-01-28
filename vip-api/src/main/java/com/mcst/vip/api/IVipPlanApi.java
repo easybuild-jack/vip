@@ -3,8 +3,8 @@ package com.mcst.vip.api;
 import java.math.BigDecimal;
 
 import com.mcst.service.core.base.IBaseService;
-import com.mcst.vip.api.dto.VipPlanResp;
-import com.mcst.vip.api.param.VipPlanReq;
+import com.mcst.vip.api.request.VipPlanReq;
+import com.mcst.vip.api.response.VipPlanResp;
 
 /**
  * VIP套餐API接口
