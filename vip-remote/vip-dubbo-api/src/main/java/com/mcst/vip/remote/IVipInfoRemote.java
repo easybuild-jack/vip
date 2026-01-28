@@ -1,8 +1,8 @@
 package com.mcst.vip.remote;
 
+import com.mcst.easyfk.remote.dubbo.IDubboBaseRemote;
 import com.mcst.vip.api.response.VipInfoResp;
 import com.mcst.vip.api.request.VipInfoReq;
-import com.mcst.easyfk.remote.dubbo.IDubboBaseRemote;
 
 /**
 * <p>
@@ -12,7 +12,7 @@ import com.mcst.easyfk.remote.dubbo.IDubboBaseRemote;
 * @author liu yijun
 * @since 2026-01-28
 */
-public interface IVipInfoRemote extends IDubboBaseRemote<VipInfoResp,String,VipInfoReq>{
+public interface IVipInfoRemote extends IDubboBaseRemote<VipInfoResp,String,VipInfoReq> {
 
 
 }

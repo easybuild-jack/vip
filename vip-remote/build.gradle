@@ -1,2 +1,5 @@
-// vip-remote 父模块
-// 子模块: vip-cloud-api, vip-cloud-provider, vip-dubbo-api, vip-dubbo-provider
+subprojects{
+    dependencies {
+        api project(':vip-api')
+    }
+}

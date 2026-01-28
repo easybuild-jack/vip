@@ -1,4 +1,4 @@
 dependencies {
-    api project(':vip-api')
-    api ('com.mcst:rpc-dubbo')
+    api ('com.mcst:remote-dubbo')
+    compileOnly("com.mcst:rpc-dubbo")
 }
