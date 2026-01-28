@@ -1,34 +1,30 @@
 package com.mcst.vip.server.service.impl;
 
-import com.mcst.service.core.impl.BaseServiceImpl;
-import com.mcst.vip.api.dto.VipInfoResp;
-import com.mcst.vip.api.param.VipInfoReq;
-import com.mcst.vip.server.persistence.model.VipInfo;
-import com.mcst.vip.server.repository.IVipInfoRepository;
+import com.mcst.vip.api.response.VipInfoResp;
+import com.mcst.vip.api.request.VipInfoReq;
+import com.mcst.vip.api.dto.VipInfoDto;
 import com.mcst.vip.server.service.IVipInfoService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
+import com.mcst.vip.server.repository.IVipInfoRepository;
 import com.mcst.easyfk.core.dto.page.PageResult;
-import com.mcst.easyfk.core.dto.request.ModifyRequest;
 import com.mcst.easyfk.core.dto.request.SearchRequest;
+import com.mcst.easyfk.core.dto.request.ModifyRequest;
 import com.mcst.easyfk.core.dto.response.BaseResult;
-import com.mcst.easyfk.core.utils.common.TransformUtil;
 import com.mcst.easyfk.repository.util.ConditionUtil;
-import com.mcst.easyfk.service.util.ServiceUtil;
-
 import java.util.List;
-
+import jakarta.annotation.Resource;
+import com.mcst.easyfk.service.util.ServiceUtil;
+import com.mcst.easyfk.core.utils.common.TransformUtil;
 /**
- * VIP会员 业务实现
- *
- * @author easyfk
- */
-@Service
-public class VipInfoServiceImpl implements IVipInfoService {
+* <p>
+* VIP信息 服务实现类
+* </p>
+*
+* @author liu yijun
+* @since 2026-01-28
+*/
 
-    @Autowired
+public class VipInfoServiceImpl  implements IVipInfoService {
+    @Resource
     private IVipInfoRepository vipInfoRepository;
 
     @Override
@@ -63,7 +59,7 @@ public class VipInfoServiceImpl implements IVipInfoService {
 
     @Override
     public PageResult<VipInfoResp> queryByPage(SearchRequest<VipInfoReq> param) {
-        return TransformUtil.transformPageResult(this.vipInfoRepository.queryByPage(ConditionUtil.conditionByRequest(param)), VipInfoResp.class);
+        return TransformUtil.transformPageResult(this.vipInfoRepository.queryByPage(ConditionUtil.conditionByRequest(param)),VipInfoResp.class);
     }
 
     @Override
@@ -80,4 +76,5 @@ public class VipInfoServiceImpl implements IVipInfoService {
     public String insertAndReturnId(VipInfoReq param) {
         return ServiceUtil.insertAndReturnId(param, vipInfoRepository, VipInfoDto.class);
     }
+
 }

@@ -1,34 +1,30 @@
 package com.mcst.vip.server.service.impl;
 
-import com.mcst.easyfk.core.dto.page.PageResult;
-import com.mcst.easyfk.core.dto.request.ModifyRequest;
-import com.mcst.easyfk.core.dto.request.SearchRequest;
-import com.mcst.easyfk.core.dto.response.BaseResult;
-import com.mcst.easyfk.core.utils.common.TransformUtil;
-import com.mcst.easyfk.repository.util.ConditionUtil;
-import com.mcst.easyfk.service.util.ServiceUtil;
-import com.mcst.vip.api.dto.VipPlanResp;
-import com.mcst.vip.api.param.VipPlanReq;
-import com.mcst.vip.server.persistence.model.VipPlan;
-import com.mcst.vip.server.repository.IVipPlanRepository;
+import com.mcst.vip.api.response.VipPlanResp;
+import com.mcst.vip.api.request.VipPlanReq;
+import com.mcst.vip.api.dto.VipPlanDto;
 import com.mcst.vip.server.service.IVipPlanService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.math.BigDecimal;
+import com.mcst.vip.server.repository.IVipPlanRepository;
+import com.mcst.easyfk.core.dto.page.PageResult;
+import com.mcst.easyfk.core.dto.request.SearchRequest;
+import com.mcst.easyfk.core.dto.request.ModifyRequest;
+import com.mcst.easyfk.core.dto.response.BaseResult;
+import com.mcst.easyfk.repository.util.ConditionUtil;
 import java.util.List;
-
+import jakarta.annotation.Resource;
+import com.mcst.easyfk.service.util.ServiceUtil;
+import com.mcst.easyfk.core.utils.common.TransformUtil;
 /**
- * VIP会员套餐 业务实现
- *
- * @author easyfk
- */
-@Service
-@Transactional(rollbackFor = Exception.class)
-public class VipPlanServiceImpl implements IVipPlanService {
+* <p>
+* VIP套餐 服务实现类
+* </p>
+*
+* @author liu yijun
+* @since 2026-01-28
+*/
 
-    @Autowired
+public class VipPlanServiceImpl  implements IVipPlanService {
+    @Resource
     private IVipPlanRepository vipPlanRepository;
 
     @Override
@@ -38,20 +34,17 @@ public class VipPlanServiceImpl implements IVipPlanService {
 
     @Override
     public VipPlanResp queryOneByField(String field, Object value, String... selectColumns) {
-        return TransformUtil.transformObj(this.vipPlanRepository.queryOneByField(field, value, selectColumns),
-                VipPlanResp.class);
+        return TransformUtil.transformObj(this.vipPlanRepository.queryOneByField(field, value, selectColumns), VipPlanResp.class);
     }
 
     @Override
     public List<VipPlanResp> queryList(SearchRequest<VipPlanReq> param) {
-        return TransformUtil.transformList(
-                this.vipPlanRepository.queryByCondition(ConditionUtil.conditionByRequest(param)), VipPlanResp.class);
+        return TransformUtil.transformList(this.vipPlanRepository.queryByCondition(ConditionUtil.conditionByRequest(param)), VipPlanResp.class);
     }
 
     @Override
     public VipPlanResp queryOne(SearchRequest<VipPlanReq> param) {
-        return TransformUtil.transformObj(
-                this.vipPlanRepository.queryOneByCondition(ConditionUtil.conditionByRequest(param)), VipPlanResp.class);
+        return TransformUtil.transformObj(this.vipPlanRepository.queryOneByCondition(ConditionUtil.conditionByRequest(param)), VipPlanResp.class);
     }
 
     @Override
@@ -66,8 +59,7 @@ public class VipPlanServiceImpl implements IVipPlanService {
 
     @Override
     public PageResult<VipPlanResp> queryByPage(SearchRequest<VipPlanReq> param) {
-        return TransformUtil.transformPageResult(
-                this.vipPlanRepository.queryByPage(ConditionUtil.conditionByRequest(param)), VipPlanResp.class);
+        return TransformUtil.transformPageResult(this.vipPlanRepository.queryByPage(ConditionUtil.conditionByRequest(param)),VipPlanResp.class);
     }
 
     @Override
@@ -85,9 +77,4 @@ public class VipPlanServiceImpl implements IVipPlanService {
         return ServiceUtil.insertAndReturnId(param, vipPlanRepository, VipPlanDto.class);
     }
 
-    @Override
-    public GetPlanPriceByUserResp getVipPlanPrice(GetPlanPriceByUser param) {
-
-        return null;
-    }
 }

@@ -1,13 +1,15 @@
 package com.mcst.vip.server.repository;
 
-import com.mcst.orm.mybatis.core.IBaseRepository;
-import com.mcst.vip.server.persistence.model.VipInfo;
-
+import com.mcst.vip.api.dto.VipInfoDto;
+import com.mcst.easyfk.repository.api.IBaseRepository;
 /**
- * VIP会员 仓储接口
- *
- * @author easyfk
- */
-public interface IVipInfoRepository extends IBaseRepository<VipInfo,String> {
+* <p>
+* VIP信息 Repository接口
+* </p>
+*
+* @author liu yijun
+* @since 2026-01-28
+*/
+public interface IVipInfoRepository extends IBaseRepository<VipInfoDto,String> {
 
 }

@@ -1,10 +1,9 @@
 package com.mcst.vip.server.impl;
 
+import com.mcst.easyfk.service.api.IBaseService;
 import com.mcst.service.core.impl.ApiServerImpl;
-import com.mcst.vip.api.IVipApi;
 import com.mcst.vip.api.dto.VipInfoResp;
 import com.mcst.vip.api.param.VipInfoReq;
-import com.mcst.vip.server.service.IVipInfoService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,7 +12,7 @@ import org.springframework.stereotype.Service;
  * @author easyfk
  */
 @Service
-public class VipApiImpl extends ApiServerImpl<IVipInfoService, VipInfoResp, String, VipInfoReq> implements IVipApi {
+public class VipApiImpl extends ApiServerImpl<IVipInfoService, VipInfoResp, String, VipInfoReq> implements IBaseService<VipInfoResp, String, VipInfoReq> {
 
     @Override
     public VipInfoResp queryVipInfo(String vipId) {

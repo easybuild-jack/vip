@@ -1,25 +1,18 @@
 package com.mcst.vip.api;
 
-import java.math.BigDecimal;
-
-import com.mcst.vip.api.request.GetPlanPriceByUser;
-import com.mcst.vip.api.request.VipPlanReq;
-import com.mcst.vip.api.response.GetPlanPriceByUserResp;
 import com.mcst.vip.api.response.VipPlanResp;
+import com.mcst.vip.api.request.VipPlanReq;
+import com.mcst.easyfk.service.api.IBaseApi;
 
 /**
- * VIP套餐API接口
- *
- * @author easyfk
- */
-public interface IVipPlanApi extends IBaseService<VipPlanResp, String, VipPlanReq> {
+* <p>
+* VIP套餐 服务接口类
+* </p>
+*
+* @author liu yijun
+* @since 2026-01-28
+*/
+public interface IVipPlanApi extends IBaseApi<VipPlanResp,String,VipPlanReq> {
 
-    /**
-     * 根据套餐ID获取套餐价格
-     * 
-     * @param param
-     * @return GetPlanPriceByUserResp
-     */
-    GetPlanPriceByUserResp getVipPlanPrice(GetPlanPriceByUser param);
 
 }

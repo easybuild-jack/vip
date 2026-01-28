@@ -1,35 +1,28 @@
 package com.mcst.vip.api.request;
 
-import com.mcst.core.entity.BaseReq;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
-
-import java.time.LocalDateTime;
+import com.mcst.vip.api.param.VipInfoParam;
 
 /**
- * VIP会员请求对象
- *
- * @author easyfk
- */
+* <p>
+* VIP信息数据请求对象
+* </p>
+*
+* @author liu yijun
+* @since 2026-01-28
+*/
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Schema(description = "VIP会员请求对象")
+@Accessors(chain = true)
+@Schema(description="VIP信息数据请求对象")
 @SuperBuilder
 @NoArgsConstructor
-public class VipInfoReq extends BaseReq {
+public class VipInfoReq extends VipInfoParam {
 
-    @Schema(description = "VIP会员ID")
-    private String vipId;
 
-    @Schema(description = "用户ID")
-    private String userId;
-
-    @Schema(description = "VIP等级ID")
-    private String levelId;
-
-    @Schema(description = "到期时间")
-    private LocalDateTime expireTime;
 }

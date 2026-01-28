@@ -1,14 +1,18 @@
 package com.mcst.vip.server.service;
 
-import com.mcst.service.core.base.IBaseService;
-import com.mcst.vip.api.dto.VipOrderResp;
-import com.mcst.vip.api.param.VipOrderReq;
+import com.mcst.vip.api.response.VipOrderResp;
+import com.mcst.vip.api.request.VipOrderReq;
+import com.mcst.easyfk.service.api.IBaseService;
 
 /**
- * VIP购买订单 业务接口
- *
- * @author easyfk
- */
-public interface IVipOrderService extends IBaseService<VipOrderResp, String, VipOrderReq> {
+* <p>
+* VIP订单 服务接口类
+* </p>
+*
+* @author liu yijun
+* @since 2026-01-28
+*/
+public interface IVipOrderService extends IBaseService<VipOrderResp,String,VipOrderReq> {
+
 
 }

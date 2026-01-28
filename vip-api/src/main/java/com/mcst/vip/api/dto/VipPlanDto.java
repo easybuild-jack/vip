@@ -1,53 +1,91 @@
 package com.mcst.vip.api.dto;
-
-import com.mcst.core.entity.BaseDto;
-import com.mcst.core.params.PrimaryKey;
+import com.mcst.easyfk.core.annotation.PrimaryKey;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
-
+import lombok.experimental.Accessors;
+import com.mcst.easyfk.core.dto.BaseDto;
 import java.math.BigDecimal;
 
 /**
- * VIP会员套餐数据传输对象
- *
- * @author easyfk
- */
+* <p>
+* VIP套餐
+* </p>
+*
+* @author liu yijun
+* @since 2026-01-28
+*/
 @Data
-@Schema(description = "VIP会员套餐数据对象")
+@EqualsAndHashCode(callSuper = true)
+@Accessors(chain = true)
+@Schema(description="VIP套餐数据对象")
 @SuperBuilder
 @NoArgsConstructor
 public class VipPlanDto extends BaseDto {
 
-    @PrimaryKey
-    @Schema(description = "套餐ID")
-    private String planId;
 
-    @Schema(description = "VOP编号")
+    /**
+    * VIP套餐ID
+    */
+    @PrimaryKey
+    @Schema(description= "VIP套餐ID")
+    private String vipPlanId;
+
+    /**
+    * VIP编号
+    */
+    @Schema(description= "VIP编号")
     private String vipCode;
 
-    @Schema(description = "VIP名称")
+    /**
+    * VIP名称
+    */
+    @Schema(description= "VIP名称")
     private String vipName;
 
-    @Schema(description = "套餐编号")
+    /**
+    * 套餐编号
+    */
+    @Schema(description= "套餐编号")
     private String planCode;
 
-    @Schema(description = "套餐名称")
+    /**
+    * 套餐名称
+    */
+    @Schema(description= "套餐名称")
     private String planName;
 
-    @Schema(description = "首购金额")
+    /**
+    * 首购金额
+    */
+    @Schema(description= "首购金额")
     private BigDecimal firstPrice;
 
-    @Schema(description = "原价")
+    /**
+    * 原价
+    */
+    @Schema(description= "原价")
     private BigDecimal price;
 
-    @Schema(description = "活动价")
+    /**
+    * 活动价
+    */
+    @Schema(description= "活动价")
     private BigDecimal activityPrice;
 
-    @Schema(description = "有效天数,-1表示永久")
+    /**
+    * 有效天数,-1表示永久
+    */
+    @Schema(description= "有效天数,-1表示永久")
     private Integer days;
 
-    @Schema(description = "禁用状态 0可用，1禁用")
+    /**
+    * 禁用状态 0可用，1禁用
+    */
+    @Schema(description= "禁用状态 0可用，1禁用")
     private Integer forbiddenFlag;
+
+
 }

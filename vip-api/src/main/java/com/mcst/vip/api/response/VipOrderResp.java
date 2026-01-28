@@ -1,23 +1,28 @@
 package com.mcst.vip.api.response;
 
 import com.mcst.vip.api.dto.VipOrderDto;
-
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 /**
- * VIP购买订单响应对象
- *
- * @author easyfk
- */
+* <p>
+* VIP订单数据响应对象
+* </p>
+*
+* @author liu yijun
+* @since 2026-01-28
+*/
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Schema(description = "VIP购买订单响应对象")
+@Accessors(chain = true)
+@Schema(description="VIP订单数据响应对象")
 @SuperBuilder
 @NoArgsConstructor
 public class VipOrderResp extends VipOrderDto {
+
 
 }

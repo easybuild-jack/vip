@@ -1,18 +1,19 @@
 package com.mcst.vip.server.repository.impl;
 
-import com.mcst.orm.mybatis.core.BaseRepositoryImpl;
+import com.mcst.vip.api.dto.VipOrderDto;
+import com.mcst.vip.server.repository.IVipOrderRepository;
+import com.mcst.easyfk.service.mybatisplus.impl.BaseMyBatisRepositoryImpl;
 import com.mcst.vip.server.persistence.mapper.VipOrderMapper;
 import com.mcst.vip.server.persistence.model.VipOrder;
-import com.mcst.vip.server.repository.IVipOrderRepository;
-import org.springframework.stereotype.Repository;
-
 /**
- * VIP购买订单 仓储实现
- *
- * @author easyfk
- */
-@Repository
-public class VipOrderRepositoryImpl extends BaseRepositoryImpl<VipOrderMapper, VipOrder>
-        implements IVipOrderRepository {
+* <p>
+* VIP订单 Repository实现类
+* </p>
+*
+* @author liu yijun
+* @since 2026-01-28
+*/
+public class VipOrderRepositoryImpl extends BaseMyBatisRepositoryImpl<VipOrderMapper,VipOrderDto, VipOrder,String> implements IVipOrderRepository {
+
 
 }

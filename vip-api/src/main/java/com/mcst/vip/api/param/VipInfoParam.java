@@ -1,26 +1,52 @@
 package com.mcst.vip.api.param;
 
-import com.mcst.core.entity.BasePageParam;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+import com.mcst.easyfk.core.dto.request.BasicParam;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
- * VIP会员查询参数
- *
- * @author easyfk
- */
+* <p>
+* VIP信息数据参数对象
+* </p>
+*
+* @author liu yijun
+* @since 2026-01-28
+*/
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Schema(description = "VIP会员查询参数")
-public class VipInfoParam extends BasePageParam {
+@Accessors(chain = true)
+@Schema(description="VIP信息数据参数对象")
+@SuperBuilder
+@NoArgsConstructor
+public class VipInfoParam extends BasicParam {
 
-    @Schema(description = "VIP编号")
+    /**
+    * VIP信息ID
+    */
+    @Schema(description= "VIP信息ID")
+    private String vipInfoId;
+    /**
+    * VIP编号
+    */
+    @Schema(description= "VIP编号")
     private String vipCode;
-
-    @Schema(description = "禁用状态 0可用，1禁用")
+    /**
+    * VIP名称
+    */
+    @Schema(description= "VIP名称")
+    private String vipName;
+    /**
+    * 禁用状态 0可用，1禁用
+    */
+    @Schema(description= "禁用状态 0可用，1禁用")
     private Integer forbiddenFlag;
-
-    @Schema(description = "关键词")
-    private String keyword;
+    /**
+    * 介绍
+    */
+    @Schema(description= "介绍")
+    private String description;
 }

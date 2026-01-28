@@ -1,21 +1,19 @@
 package com.mcst.vip.server.repository.impl;
 
-import com.mcst.orm.mybatis.core.BaseRepositoryImpl;
+import com.mcst.vip.api.dto.VipInfoDto;
+import com.mcst.vip.server.repository.IVipInfoRepository;
+import com.mcst.easyfk.service.mybatisplus.impl.BaseMyBatisRepositoryImpl;
 import com.mcst.vip.server.persistence.mapper.VipInfoMapper;
 import com.mcst.vip.server.persistence.model.VipInfo;
-import com.mcst.vip.server.repository.IVipInfoRepository;
-import org.springframework.stereotype.Repository;
-
 /**
- * VIP会员 仓储实现
- *
- * @author easyfk
- */
-@Repository
-public class VipInfoRepositoryImpl extends BaseRepositoryImpl<VipInfoMapper, VipInfo> implements IVipInfoRepository {
+* <p>
+* VIP信息 Repository实现类
+* </p>
+*
+* @author liu yijun
+* @since 2026-01-28
+*/
+public class VipInfoRepositoryImpl extends BaseMyBatisRepositoryImpl<VipInfoMapper,VipInfoDto, VipInfo,String> implements IVipInfoRepository {
 
-    @Override
-    public VipInfo findByUserId(String userId) {
-        return this.baseMapper.selectByUserId(userId);
-    }
+
 }

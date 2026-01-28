@@ -1,2 +1,6 @@
-// vip-prd 父模块
-// 子模块: vip-prd-client, vip-prd-bms
+subprojects {
+    dependencies {
+        api project(':vip-api')
+        api('com.mcst:web-prd')
+    }
+}
