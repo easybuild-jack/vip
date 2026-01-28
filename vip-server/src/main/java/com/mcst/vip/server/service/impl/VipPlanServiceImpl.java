@@ -81,6 +81,11 @@ public class VipPlanServiceImpl implements IVipPlanService {
 
     @Override
     public String insertAndReturnId(VipPlanReq param) {
-        return ServiceUtil.insertAndReturnId(param, vipPlanRepository, VipPlan.class);
+        return ServiceUtil.insertAndReturnId(param, vipPlanRepository, VipPlanDto.class);
+    }
+
+    @Override
+    public BigDecimal getVipPlanPrice(String planId) {
+        return null;
     }
 }
