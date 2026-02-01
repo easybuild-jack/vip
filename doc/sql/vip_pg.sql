@@ -8,11 +8,9 @@ CREATE TABLE IF NOT EXISTS vip_info (
     vip_name VARCHAR(50) DEFAULT NULL,
     forbidden_flag SMALLINT NOT NULL DEFAULT 0,
     description VARCHAR(500) DEFAULT NULL,
-    create_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    creator VARCHAR(32) DEFAULT NULL,
-    updater VARCHAR(32) DEFAULT NULL,
-    del_flag SMALLINT NOT NULL DEFAULT 0,
+    insert_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    last_update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    deleted INTEGER NOT NULL DEFAULT 0,
     PRIMARY KEY (vip_id)
 );
 
@@ -22,6 +20,9 @@ COMMENT ON COLUMN vip_info.vip_code IS 'VIP编号';
 COMMENT ON COLUMN vip_info.vip_name IS 'VIP名称';
 COMMENT ON COLUMN vip_info.forbidden_flag IS '禁用状态 0可用，1禁用';
 COMMENT ON COLUMN vip_info.description IS '介绍';
+COMMENT ON COLUMN vip_info.insert_time IS '插入时间';
+COMMENT ON COLUMN vip_info.last_update_time IS '最后更新时间';
+COMMENT ON COLUMN vip_info.deleted IS '逻辑删除标识: 0-正常, 1-已删除';
 
 CREATE INDEX idx_info_vip_code ON vip_info(vip_code);
 
@@ -37,11 +38,9 @@ CREATE TABLE IF NOT EXISTS vip_plan (
     activity_price DECIMAL(10,2) NOT NULL DEFAULT 0.00,
     days INT NOT NULL,
     forbidden_flag SMALLINT NOT NULL DEFAULT 0,
-    create_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    creator VARCHAR(32) DEFAULT NULL,
-    updater VARCHAR(32) DEFAULT NULL,
-    del_flag SMALLINT NOT NULL DEFAULT 0,
+    insert_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    last_update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    deleted INTEGER NOT NULL DEFAULT 0,
     PRIMARY KEY (plan_id)
 );
 
@@ -56,6 +55,9 @@ COMMENT ON COLUMN vip_plan.price IS '原价';
 COMMENT ON COLUMN vip_plan.activity_price IS '活动价';
 COMMENT ON COLUMN vip_plan.days IS '有效天数,-1表示永久';
 COMMENT ON COLUMN vip_plan.forbidden_flag IS '禁用状态 0可用，1禁用';
+COMMENT ON COLUMN vip_plan.insert_time IS '插入时间';
+COMMENT ON COLUMN vip_plan.last_update_time IS '最后更新时间';
+COMMENT ON COLUMN vip_plan.deleted IS '逻辑删除标识: 0-正常, 1-已删除';
 
 CREATE INDEX idx_plan_vip_code ON vip_plan(vip_code);
 CREATE INDEX idx_plan_plan_code ON vip_plan(plan_code);
@@ -71,11 +73,9 @@ CREATE TABLE IF NOT EXISTS vip_order (
     days INT NOT NULL,
     pay_time TIMESTAMP DEFAULT NULL,
     remark VARCHAR(255) DEFAULT NULL,
-    create_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    creator VARCHAR(32) DEFAULT NULL,
-    updater VARCHAR(32) DEFAULT NULL,
-    del_flag SMALLINT NOT NULL DEFAULT 0,
+    insert_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    last_update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    deleted INTEGER NOT NULL DEFAULT 0,
     PRIMARY KEY (order_id)
 );
 
@@ -88,8 +88,11 @@ COMMENT ON COLUMN vip_order.plan_name IS '套餐名称';
 COMMENT ON COLUMN vip_order.pay_price IS '支付金额';
 COMMENT ON COLUMN vip_order.days IS '有效天数,-1表示永久';
 COMMENT ON COLUMN vip_order.pay_time IS '支付时间';
+COMMENT ON COLUMN vip_order.insert_time IS '插入时间';
+COMMENT ON COLUMN vip_order.last_update_time IS '最后更新时间';
+COMMENT ON COLUMN vip_order.deleted IS '逻辑删除标识: 0-正常, 1-已删除';
 
 CREATE INDEX idx_order_user_id ON vip_order(user_id);
 CREATE INDEX idx_order_plan_id ON vip_order(plan_id);
 CREATE INDEX idx_order_order_no ON vip_order(order_no);
-CREATE INDEX idx_order_create_time ON vip_order(create_time);
+CREATE INDEX idx_order_insert_time ON vip_order(insert_time);

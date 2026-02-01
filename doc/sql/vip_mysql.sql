@@ -11,11 +11,9 @@ CREATE TABLE IF NOT EXISTS `vip_info` (
     `vip_name` VARCHAR(50) DEFAULT NULL COMMENT 'VIP名称',
     `forbidden_flag` TINYINT NOT NULL DEFAULT 0 COMMENT '禁用状态 0可用，1禁用',
     `description` VARCHAR(500) DEFAULT NULL COMMENT '介绍',
-    `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-    `creator` VARCHAR(32) DEFAULT NULL COMMENT '创建人',
-    `updater` VARCHAR(32) DEFAULT NULL COMMENT '更新人',
-    `del_flag` TINYINT NOT NULL DEFAULT 0 COMMENT '删除标志: 0-正常, 1-删除',
+    `insert_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '插入时间',
+    `last_update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后更新时间',
+    `deleted` INT NOT NULL DEFAULT 0 COMMENT '逻辑删除标识: 0-正常, 1-已删除',
     PRIMARY KEY (`vip_id`),
     KEY `idx_vip_code` (`vip_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='VIP信息表';
@@ -32,11 +30,9 @@ CREATE TABLE IF NOT EXISTS `vip_plan` (
     `activity_price` DECIMAL(10,2) NOT NULL DEFAULT '0.00' COMMENT '活动价',
     `days` INT NOT NULL COMMENT '有效天数,-1表示永久',
     `forbidden_flag` TINYINT NOT NULL DEFAULT 0 COMMENT '禁用状态 0可用，1禁用',
-    `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-    `creator` VARCHAR(32) DEFAULT NULL COMMENT '创建人',
-    `updater` VARCHAR(32) DEFAULT NULL COMMENT '更新人',
-    `del_flag` TINYINT NOT NULL DEFAULT 0 COMMENT '删除标志: 0-正常, 1-删除',
+    `insert_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '插入时间',
+    `last_update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后更新时间',
+    `deleted` INT NOT NULL DEFAULT 0 COMMENT '逻辑删除标识: 0-正常, 1-已删除',
     PRIMARY KEY (`plan_id`),
     KEY `idx_vip_code` (`vip_code`),
     KEY `idx_plan_code` (`plan_code`)
@@ -53,14 +49,12 @@ CREATE TABLE IF NOT EXISTS `vip_order` (
     `days` INT NOT NULL COMMENT '有效天数,-1表示永久',
     `pay_time` DATETIME DEFAULT NULL COMMENT '支付时间',
     `remark` VARCHAR(255) DEFAULT NULL COMMENT '备注',
-    `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-    `creator` VARCHAR(32) DEFAULT NULL COMMENT '创建人',
-    `updater` VARCHAR(32) DEFAULT NULL COMMENT '更新人',
-    `del_flag` TINYINT NOT NULL DEFAULT 0 COMMENT '删除标志: 0-正常, 1-删除',
+    `insert_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '插入时间',
+    `last_update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后更新时间',
+    `deleted` INT NOT NULL DEFAULT 0 COMMENT '逻辑删除标识: 0-正常, 1-已删除',
     PRIMARY KEY (`order_id`),
     KEY `idx_user_id` (`user_id`),
     KEY `idx_plan_id` (`plan_id`),
     KEY `idx_order_no` (`order_no`),
-    KEY `idx_create_time` (`create_time`)
+    KEY `idx_insert_time` (`insert_time`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='VIP购买订单表';
