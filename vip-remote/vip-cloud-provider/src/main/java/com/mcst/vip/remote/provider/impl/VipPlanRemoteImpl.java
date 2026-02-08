@@ -9,7 +9,7 @@ import com.mcst.vip.remote.IVipPlanRemote;
 import com.mcst.vip.server.service.IVipPlanService;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * <p>
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author liu yijun
  */
-@RestController
+@ResponseBody
 @RequestMapping("${easyfk.config.remote.vip.base-path:/remote}/vip/vipPlan")
 public class VipPlanRemoteImpl extends BaseRemoteImpl<IVipPlanService, VipPlanResp, String, VipPlanReq> implements IVipPlanRemote {
 

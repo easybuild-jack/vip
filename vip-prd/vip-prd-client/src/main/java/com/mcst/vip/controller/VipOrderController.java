@@ -25,7 +25,7 @@ import java.util.List;
 * @since 2026-01-28
 */
 @Tag(name = "VIP订单相关接口", description = "VIP订单相关接口")
-@RestController
+@ResponseBody
 @RequestMapping("/api/vip/vipOrder")
 public class VipOrderController {
     @Resource
