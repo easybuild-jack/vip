@@ -9,7 +9,7 @@ import com.mcst.vip.remote.IVipOrderRemote;
 import com.mcst.vip.server.service.IVipOrderService;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  *
  * @author liu yijun
  */
-@ResponseBody
+@RestController
 @RequestMapping("${easyfk.config.remote.vip.base-path:/remote}/vip/vipOrder")
 public class VipOrderRemoteImpl extends BaseRemoteImpl<IVipOrderService, VipOrderResp, String, VipOrderReq> implements IVipOrderRemote {
 

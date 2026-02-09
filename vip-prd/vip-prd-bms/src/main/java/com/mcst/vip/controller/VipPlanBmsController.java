@@ -22,7 +22,7 @@ import com.mcst.easyfk.core.utils.common.EmptyUtil;
 import com.mcst.easyfk.core.dto.request.DisableFieldReq;
 import com.mcst.easyfk.core.utils.common.DisableUtil;
 import com.mcst.easyfk.core.dto.request.DisableActionParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 
 /**
@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 * @since 2026-01-28
 */
 @Tag(name = "VIP套餐相关接口", description = "VIP套餐相关接口")
-@ResponseBody
+@RestController
 @RequestMapping("/api/bms/vip/vipPlan")
 public class VipPlanBmsController {
     @Resource

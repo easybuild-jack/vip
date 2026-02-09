@@ -8,7 +8,6 @@ import com.mcst.vip.api.response.VipPlanResp;
 import com.mcst.vip.remote.IVipPlanRemote;
 import com.mcst.vip.server.service.IVipPlanService;
 import jakarta.annotation.Resource;
-import org.apache.dubbo.config.annotation.DubboService;
 
 /**
  * <p>
@@ -17,7 +16,6 @@ import org.apache.dubbo.config.annotation.DubboService;
  *
  * @author liu yijun
  */
-@DubboService
 public class VipPlanRemoteImpl extends DubboBaseRemoteImpl<IVipPlanService, VipPlanResp, String, VipPlanReq> implements IVipPlanRemote {
 
     @Resource

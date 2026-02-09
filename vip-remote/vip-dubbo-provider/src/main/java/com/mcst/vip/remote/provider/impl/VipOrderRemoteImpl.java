@@ -17,7 +17,6 @@ import org.apache.dubbo.config.annotation.DubboService;
  *
  * @author liu yijun
  */
-@DubboService
 public class VipOrderRemoteImpl extends DubboBaseRemoteImpl<IVipOrderService, VipOrderResp, String, VipOrderReq> implements IVipOrderRemote {
 
     @Resource

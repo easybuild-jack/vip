@@ -6,7 +6,7 @@ import com.mcst.vip.server.service.IVipInfoService;
 import com.mcst.vip.remote.IVipInfoRemote;
 import com.mcst.easyfk.remote.sc.BaseRemoteImpl;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
 * <p>
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 *
 * @author liu yijun
 */
-@ResponseBody
+@RestController
 @RequestMapping("${easyfk.config.remote.vip.base-path:/remote}/vip/vipInfo")
 public class VipInfoRemoteImpl extends BaseRemoteImpl<IVipInfoService, VipInfoResp,String,VipInfoReq> implements IVipInfoRemote {
 
