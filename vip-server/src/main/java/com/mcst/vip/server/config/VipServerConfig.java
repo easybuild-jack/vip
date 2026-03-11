@@ -2,10 +2,8 @@ package com.mcst.vip.server.config;
 
 import com.mcst.vip.api.*;
 import com.mcst.vip.server.service.*;
-import com.mcst.vip.server.repository.*;
 import com.mcst.vip.server.impl.*;
 import com.mcst.vip.server.service.impl.*;
-import com.mcst.vip.server.repository.impl.*;
 
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
@@ -52,24 +50,6 @@ public class VipServerConfig {
     @ConditionalOnMissingBean
     public IVipInfoService vipInfoService() {
         return new VipInfoServiceImpl();
-    }
-
-    @Bean
-    @ConditionalOnMissingBean
-    public IVipOrderRepository vipOrderRepository() {
-        return new VipOrderRepositoryImpl();
-    }
-
-    @Bean
-    @ConditionalOnMissingBean
-    public IVipPlanRepository vipPlanRepository() {
-        return new VipPlanRepositoryImpl();
-    }
-
-    @Bean
-    @ConditionalOnMissingBean
-    public IVipInfoRepository vipInfoRepository() {
-        return new VipInfoRepositoryImpl();
     }
 
 

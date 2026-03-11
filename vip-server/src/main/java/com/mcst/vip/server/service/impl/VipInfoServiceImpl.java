@@ -4,7 +4,7 @@ import com.mcst.vip.api.response.VipInfoResp;
 import com.mcst.vip.api.request.VipInfoReq;
 import com.mcst.vip.api.dto.VipInfoDto;
 import com.mcst.vip.server.service.IVipInfoService;
-import com.mcst.vip.server.repository.IVipInfoRepository;
+import com.mcst.vip.orm.repository.IVipInfoRepository;
 import com.mcst.easyfk.core.dto.page.PageResult;
 import com.mcst.easyfk.core.dto.request.SearchRequest;
 import com.mcst.easyfk.core.dto.request.ModifyRequest;

@@ -14,6 +14,16 @@ dependencyResolutionManagement.versionCatalogs {
 include 'vip-server'
 include 'vip-api'
 
+include 'vip-orm'
+include 'vip-orm:vip-orm-api'
+findProject(':vip-orm:vip-orm-api')?.name = 'vip-orm-api'
+include 'vip-orm:vip-orm-plus'
+findProject(':vip-orm:vip-orm-plus')?.name = 'vip-orm-plus'
+include 'vip-orm:vip-orm-flex'
+findProject(':vip-orm:vip-orm-flex')?.name = 'vip-orm-flex'
+include 'vip-orm:vip-orm-hibernate'
+findProject(':vip-orm:vip-orm-hibernate')?.name = 'vip-orm-hibernate'
+
 include 'vip-prd'
 include 'vip-prd:vip-prd-client'
 findProject(':vip-prd:vip-prd-client')?.name = 'vip-prd-client'

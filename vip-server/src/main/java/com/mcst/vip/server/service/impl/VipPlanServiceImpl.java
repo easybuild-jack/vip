@@ -17,7 +17,7 @@ import com.mcst.vip.api.request.GetPlanPriceByUser;
 import com.mcst.vip.api.request.VipPlanReq;
 import com.mcst.vip.api.response.GetPlanPriceByUserResp;
 import com.mcst.vip.api.response.VipPlanResp;
-import com.mcst.vip.server.repository.IVipPlanRepository;
+import com.mcst.vip.orm.repository.IVipPlanRepository;
 import com.mcst.vip.server.service.IVipPlanService;
 import jakarta.annotation.Resource;
 
