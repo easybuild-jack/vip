@@ -1,4 +1,4 @@
 dependencies {
     api project(':vip-orm:vip-orm-api')
-    implementation('com.mcst:orm-hibernate')
+    api('com.mcst:orm-hibernate')
 }

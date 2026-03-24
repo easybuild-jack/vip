@@ -1,8 +1,8 @@
-package com.mcst.vip.orm.hibernate.persistence.repository;
+package com.mcst.vip.orm.hibernate.persistence.mapper;
 
 import com.mcst.vip.orm.hibernate.persistence.model.VipOrder;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
-public interface VipOrderJpaRepository extends JpaRepository<VipOrder, String>, JpaSpecificationExecutor<VipOrder> {
+public interface VipOrderMapper extends JpaRepository<VipOrder, String>, JpaSpecificationExecutor<VipOrder> {
 }
